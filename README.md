@@ -7,7 +7,7 @@ Construct2Game + JavaFX 实现客户端小游戏
 
 有需要的可以直接拿原生[Construct2Game](https://github.com/HarryBlackCatQAQ/Construct2Game/tree/main/src/main/resources/construct2Game)放到web服务器上即可正常游玩
 
-#演示
+# 演示
 ![](https://github.com/HarryBlackCatQAQ/Image/blob/main/Construct2GameMainMenu.png)
 
 ![](https://github.com/HarryBlackCatQAQ/Image/blob/main/Construct2Game_GameShows.png)
