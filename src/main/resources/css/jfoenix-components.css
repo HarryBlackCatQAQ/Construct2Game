@@ -1,0 +1,15 @@
+.button-raised {
+    -fx-padding: 0.7em 0.57em;
+    -jfx-button-type: RAISED;
+    -fx-background-color: rgb(77, 102, 204);
+    -fx-text-fill: WHITE;
+}
+
+.close-layout-radio{
+    -fx-font-size:17px
+}
+
+.close-layout-title{
+    -fx-font-size:15px;
+    -fx-text-alignment: center;
+}

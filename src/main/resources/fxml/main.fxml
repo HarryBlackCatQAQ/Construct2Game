@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="638.0" prefWidth="1048.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hhr.controller.MainController">
+   <top>
+      <HBox prefHeight="12.0" prefWidth="1048.0" spacing="15.0" style="-fx-background-color: black;" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton fx:id="mainMenuBtn" onAction="#mainMenuBtnClicked" text="主菜单" textFill="#f5f4f4" />
+            <JFXButton fx:id="gameShowsBtn" onAction="#gameShowsBtnClick" text="游戏说明" textFill="#f5f4f4">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton fx:id="gameEnvironmentBtn" onAction="#gameEnvironmentBtnClick" text="游戏环境" textFill="#f5f4f4" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+</BorderPane>
