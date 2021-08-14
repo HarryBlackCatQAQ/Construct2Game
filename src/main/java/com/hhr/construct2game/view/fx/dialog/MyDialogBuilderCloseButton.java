@@ -1,4 +1,4 @@
-package com.hhr.model.javaFX.dialog;
+package com.hhr.construct2game.view.fx.dialog;
 
 import javafx.event.EventHandler;
 import javafx.scene.control.Label;

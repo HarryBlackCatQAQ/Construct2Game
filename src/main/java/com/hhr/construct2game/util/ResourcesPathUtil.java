@@ -1,4 +1,4 @@
-package com.hhr.util;
+package com.hhr.construct2game.util;
 
 import java.net.URL;
 

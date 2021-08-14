@@ -1,11 +1,14 @@
-package com.hhr.controller;
+package com.hhr.construct2game.controller.impl;
 
-import com.hhr.model.javaFX.MyWebView;
-import com.hhr.model.javaFX.dialog.GameEnvironmentDialog;
-import com.hhr.model.javaFX.dialog.GameShowsDialog;
-import com.hhr.view.MainView;
+import com.hhr.construct2game.Construct2GameApplication;
+import com.hhr.construct2game.controller.MainControllerAbstract;
+import com.hhr.construct2game.view.fx.MyWebView;
+import com.hhr.construct2game.view.fx.dialog.GameEnvironmentDialog;
+import com.hhr.construct2game.view.fx.dialog.GameShowsDialog;
+import de.felixroske.jfxsupport.FXMLController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,7 +18,9 @@ import java.util.ResourceBundle;
  * @Date: 2021/8/11 18:34
  * @Version 1.0
  */
-public class MainController extends MainView {
+
+@FXMLController
+public class MainControllerAbstractImpl extends MainControllerAbstract {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -37,6 +42,14 @@ public class MainController extends MainView {
     private void gameEnvironmentBtnClick(ActionEvent event) {
         GameEnvironmentDialog gameEnvironmentDialog = new GameEnvironmentDialog();
         gameEnvironmentDialog.show();
+    }
+
+    @Autowired
+    private  Construct2GameApplication construct2GameApplication;
+
+    @FXML
+    private void restartProgramBtnClick(ActionEvent event) {
+        construct2GameApplication.relaunch();
     }
 
 }

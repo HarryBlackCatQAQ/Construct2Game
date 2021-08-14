@@ -1,9 +1,10 @@
-package com.hhr.model.javaFX.dialog;
+package com.hhr.construct2game.view.fx.dialog;
 
-import com.hhr.model.javaFX.MyStage;
-import com.hhr.util.ResourcesPathUtil;
+import com.hhr.construct2game.util.ResourcesPathUtil;
+import com.hhr.construct2game.view.fx.MyStage;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Window;
 
 import java.util.LinkedHashMap;
 
@@ -16,16 +17,17 @@ import java.util.LinkedHashMap;
 public class GameShowsDialog extends MainDialog{
 
     public GameShowsDialog(){
-        dialogBuilder = new DialogBuilder(MyStage.getInstance().getStage().getScene().getWindow());
+        Window window = MyStage.getInstance().getScene().getWindow();
+        dialogBuilder = new DialogBuilder(window);
         ImageView imageView = new ImageView(new Image(ResourcesPathUtil.getPathOfString("/images/gameShowsImage.png")));
-        imageView.setFitWidth(MyStage.getInstance().getStage().getScene().getWindow().getWidth() / 1.2);
-        imageView.setFitHeight(MyStage.getInstance().getStage().getScene().getWindow().getHeight() / 1.2);
+        imageView.setFitWidth(window.getWidth() / 1.2);
+        imageView.setFitHeight(window.getHeight() / 1.2);
         LinkedHashMap<String,Object> map = new LinkedHashMap<>();
         map.put("gameShowsImage",imageView);
 
         //设置关闭按钮
         MyDialogBuilderCloseButton myDialogBuilderCloseButton = new MyDialogBuilderCloseButton(ResourcesPathUtil.getPathOfString("/images/closeBtnImage2.jpg"),27);
-        myDialogBuilderCloseButton.setSpacing(MyStage.getInstance().getStage().getScene().getWindow(),1.23);
+        myDialogBuilderCloseButton.setSpacing(window,1.23);
         myDialogBuilderCloseButton.setCloseBtnAction(new MyDialogBuilderCloseButton.OnCloseButtonClickListener() {
             @Override
             public void onClick() {

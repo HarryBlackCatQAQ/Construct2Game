@@ -1,9 +1,7 @@
-package com.hhr.model.javaFX;
+package com.hhr.construct2game.view.fx;
 
-import com.hhr.util.ResourcesPathUtil;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.concurrent.Worker;
+import com.hhr.construct2game.util.ResourcesPathUtil;
+import de.felixroske.jfxsupport.FXMLController;
 import javafx.event.Event;
 import javafx.event.EventDispatchChain;
 import javafx.event.EventDispatcher;
@@ -11,6 +9,7 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import org.springframework.stereotype.Component;
 
 /**
  * @Author: Harry

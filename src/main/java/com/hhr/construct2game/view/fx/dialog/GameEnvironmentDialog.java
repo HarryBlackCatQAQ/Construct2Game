@@ -1,10 +1,11 @@
-package com.hhr.model.javaFX.dialog;
+package com.hhr.construct2game.view.fx.dialog;
 
-import com.hhr.model.javaFX.MyStage;
-import com.hhr.model.javaFX.MyWebView;
-import com.hhr.util.ResourcesPathUtil;
+import com.hhr.construct2game.util.ResourcesPathUtil;
+import com.hhr.construct2game.view.fx.MyStage;
+import com.hhr.construct2game.view.fx.MyWebView;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import javafx.stage.Window;
 
 import java.util.LinkedHashMap;
 
@@ -15,7 +16,8 @@ import java.util.LinkedHashMap;
  */
 public class GameEnvironmentDialog extends MainDialog{
     public GameEnvironmentDialog(){
-        dialogBuilder = new DialogBuilder(MyStage.getInstance().getStage().getScene().getWindow());
+        Window window = MyStage.getInstance().getScene().getWindow();
+        dialogBuilder = new DialogBuilder(window);
 
         VBox vBox = dialogBuilder.getLayoutContentVBox();
         vBox.setSpacing(25);
@@ -43,7 +45,7 @@ public class GameEnvironmentDialog extends MainDialog{
 
         //设置关闭按钮
         MyDialogBuilderCloseButton myDialogBuilderCloseButton = new MyDialogBuilderCloseButton(ResourcesPathUtil.getPathOfString("/images/closeBtnImage2.jpg"),27);
-        myDialogBuilderCloseButton.setSpacing(MyStage.getInstance().getStage().getScene().getWindow(),1.23);
+        myDialogBuilderCloseButton.setSpacing(window,1.23);
         myDialogBuilderCloseButton.setCloseBtnAction(new MyDialogBuilderCloseButton.OnCloseButtonClickListener() {
             @Override
             public void onClick() {

@@ -1,16 +1,17 @@
-package com.hhr.view;
+package com.hhr.construct2game.controller;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import lombok.Getter;
 
 /**
  * @Author: Harry
- * @Date: 2021/8/11 18:35
+ * @Date: 2021/8/14 20:21
  * @Version 1.0
  */
-
-public abstract class MainView implements Initializable {
+@Getter
+public abstract class MainControllerAbstract implements Initializable {
     @FXML
     private JFXButton mainMenuBtn;
 
@@ -20,4 +21,6 @@ public abstract class MainView implements Initializable {
     @FXML
     private JFXButton gameEnvironmentBtn;
 
+    @FXML
+    private JFXButton restartProgramBtn;
 }
