@@ -28,7 +28,7 @@ public class MyWebView {
      */
     public static MyWebView getInstance() {
         if (instance == null) {
-            synchronized (MyStage.class) {
+            synchronized (MyWebView.class) {
                 if (instance == null) {
                     instance = new MyWebView();
                 }

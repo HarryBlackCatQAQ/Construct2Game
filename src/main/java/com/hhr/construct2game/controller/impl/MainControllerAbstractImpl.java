@@ -23,7 +23,6 @@ import java.util.ResourceBundle;
 public class MainControllerAbstractImpl extends MainControllerAbstract {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
     }
 
     @FXML

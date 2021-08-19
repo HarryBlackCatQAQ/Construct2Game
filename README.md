@@ -18,3 +18,4 @@ Construct2Game + JavaFX 实现客户端小游戏
 # 启动方法 #
 直接在Main方法入口启动即可 
 需要打包的话可以使用exe4j 或者 idea 打包都可以
+需要的可以下载尝试学习！[windows版本下载](https://github.com/HarryBlackCatQAQ/Construct2Game/releases/tag/1.0)
