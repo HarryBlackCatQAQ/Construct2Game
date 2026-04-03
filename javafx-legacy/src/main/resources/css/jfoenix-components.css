@@ -1,0 +1,106 @@
+.root {
+    -fx-background-color: #0f141b;
+    -fx-font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Segoe UI", sans-serif;
+    -fx-text-fill: #edf3f9;
+}
+
+.toolbar {
+    -fx-background-color: linear-gradient(to right, #111821, #1b2a38);
+    -fx-border-color: transparent transparent rgba(255, 255, 255, 0.12) transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.toolbar-button,
+.button {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-text-fill: #f8fbff;
+    -fx-background-radius: 10;
+    -fx-padding: 8 14;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+}
+
+.toolbar-button:hover,
+.button:hover {
+    -fx-background-color: #2f80ed;
+}
+
+.toolbar-button:pressed,
+.button:pressed {
+    -fx-background-color: #2667bf;
+}
+
+.dialog-pane,
+.dialog-pane > *.content.label,
+.dialog-pane .content,
+.dialog-pane .label {
+    -fx-background-color: #101820;
+    -fx-text-fill: #edf3f9;
+}
+
+.dialog-pane:header .header-panel {
+    -fx-background-color: #17212c;
+}
+
+.dialog-pane:header .header-panel .label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.dialog-pane > *.button-bar > *.container {
+    -fx-background-color: #101820;
+}
+
+.app-dialog .button {
+    -fx-min-width: 88;
+}
+
+.dialog-content {
+    -fx-padding: 6 2 2 2;
+}
+
+.dialog-grid {
+    -fx-padding: 8;
+}
+
+.dialog-key {
+    -fx-text-fill: #9bb0c6;
+    -fx-font-weight: bold;
+}
+
+.dialog-value {
+    -fx-text-fill: #edf3f9;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: #0f141b;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: #0f141b;
+}
+
+.dialog-button-bar {
+    -fx-background-color: #101820;
+}
+
+.game-shows-root {
+    -fx-background-color: #5f3f23;
+}
+
+.game-shows-scroll-pane {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.game-shows-scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.game-shows-button-bar {
+    -fx-background-color: rgba(58, 35, 19, 0.88);
+    -fx-border-color: rgba(255, 240, 221, 0.14) transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+}

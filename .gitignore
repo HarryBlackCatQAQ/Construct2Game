@@ -1,5 +1,4 @@
 .idea
-.mvn
 *.class
 *.iml
 target

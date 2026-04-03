@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hhr.construct2game.controller.impl.MainControllerAbstractImpl">
+   <top>
+      <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="toolbar" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="mainMenuBtn" mnemonicParsing="false" onAction="#mainMenuBtnClicked" styleClass="toolbar-button" text="游戏主菜单" />
+            <Button fx:id="gameShowsBtn" mnemonicParsing="false" onAction="#gameShowsBtnClick" styleClass="toolbar-button" text="游戏说明">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="gameEnvironmentBtn" mnemonicParsing="false" onAction="#gameEnvironmentBtnClick" styleClass="toolbar-button" text="运行环境" />
+            <Button fx:id="restartProgramBtn" mnemonicParsing="false" onAction="#restartProgramBtnClick" styleClass="toolbar-button" text="重载游戏" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <padding>
+            <Insets bottom="10.0" left="14.0" right="14.0" top="10.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </HBox>
+   </top>
+</BorderPane>
