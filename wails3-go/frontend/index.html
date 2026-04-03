@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/png" href="/app-assets/icon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="/style.css"/>
+    <title>Construct2Game</title>
+</head>
+<body>
+<div class="app-shell">
+    <div class="backdrop-glow"></div>
+    <header class="topbar">
+        <div class="brand-block">
+            <img class="brand-icon" src="/app-assets/icon.png" alt="Construct2Game icon"/>
+            <div class="brand-copy">
+                <div class="eyebrow">Wails 3 + Go 桌面版</div>
+                <h1>Construct2Game</h1>
+                <p>保留原始游戏资源，换成更稳的跨平台桌面壳层。</p>
+            </div>
+        </div>
+        <div class="toolbar" aria-label="game controls">
+            <button class="toolbar-btn" data-command="return-main-menu" type="button">返回主菜单</button>
+            <button class="toolbar-btn" data-command="reload-game" type="button">重新载入</button>
+            <button class="toolbar-btn" data-command="show-game-help" type="button">游戏说明</button>
+            <button class="toolbar-btn" data-command="show-environment" type="button">运行环境</button>
+            <button class="toolbar-btn accent" data-command="toggle-fullscreen" type="button">全屏</button>
+        </div>
+    </header>
+
+    <main class="stage-shell">
+        <section class="stage-frame">
+            <div class="loading-panel" id="loading-panel">
+                <div class="loading-title">正在载入游戏</div>
+                <div class="loading-subtitle">首次启动会稍慢一点，资源载入完成后会自动进入游戏。</div>
+            </div>
+            <iframe
+                id="game-frame"
+                src="/game/index.html?desktop=wails"
+                title="Construct2Game"
+                allow="autoplay; fullscreen"
+                tabindex="0"
+            ></iframe>
+        </section>
+    </main>
+</div>
+
+<div id="status-text" hidden>正在准备游戏窗口...</div>
+<div id="runtime-pill" hidden>Wails 3</div>
+
+<aside class="shell-notice" id="shell-notice" hidden>
+    <div class="shell-notice-label">游戏提示</div>
+    <div class="shell-notice-text" id="shell-notice-text">启动提示会显示在这里。</div>
+    <button class="shell-notice-close" id="shell-notice-close" type="button">知道了</button>
+</aside>
+
+<div class="modal-layer" id="modal-layer" hidden>
+    <button class="modal-backdrop" id="modal-backdrop" type="button" aria-label="Close dialog"></button>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" id="modal-close" type="button" aria-label="Close dialog">×</button>
+        <div class="modal-content" id="modal-content"></div>
+    </section>
+</div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

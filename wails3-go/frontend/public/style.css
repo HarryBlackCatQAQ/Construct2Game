@@ -1,0 +1,490 @@
+:root {
+    --bg-deep: #090d12;
+    --bg-panel: rgba(16, 19, 27, 0.82);
+    --bg-panel-strong: rgba(12, 15, 21, 0.94);
+    --line-soft: rgba(255, 255, 255, 0.11);
+    --line-warm: rgba(236, 190, 114, 0.45);
+    --text-main: #f6e7c3;
+    --text-muted: #baa98a;
+    --accent: #d79a3b;
+    --accent-strong: #f0bf68;
+    --accent-shadow: rgba(215, 154, 59, 0.24);
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --radius-sm: 12px;
+    font-family: "Avenir Next", "Trebuchet MS", "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: var(--text-main);
+    background: var(--bg-deep);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+@font-face {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    src: url("./Inter-Medium.ttf") format("truetype");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+html,
+body {
+    min-width: 360px;
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at top left, rgba(215, 154, 59, 0.18), transparent 32%),
+        radial-gradient(circle at right 15%, rgba(73, 110, 160, 0.22), transparent 28%),
+        linear-gradient(180deg, rgba(8, 11, 16, 0.98), rgba(7, 9, 13, 1)),
+        url("/app-assets/startUpImage.png") center top / cover no-repeat;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        linear-gradient(120deg, rgba(0, 0, 0, 0.7), rgba(10, 10, 12, 0.36)),
+        radial-gradient(circle at center, transparent, rgba(0, 0, 0, 0.75));
+    pointer-events: none;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+}
+
+.app-shell {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    padding: 22px;
+    gap: 16px;
+}
+
+.backdrop-glow {
+    position: absolute;
+    inset: 18px;
+    border-radius: 34px;
+    background:
+        linear-gradient(135deg, rgba(215, 154, 59, 0.08), transparent 45%),
+        linear-gradient(315deg, rgba(61, 121, 178, 0.08), transparent 40%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    pointer-events: none;
+}
+
+.topbar,
+.modal-card,
+.shell-notice {
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.topbar {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 18px 22px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--line-soft);
+    background: linear-gradient(135deg, rgba(12, 15, 22, 0.92), rgba(20, 23, 32, 0.76));
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.34);
+}
+
+.brand-block {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 0;
+}
+
+.brand-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    object-fit: cover;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.brand-copy h1,
+.side-card h2,
+.modal-heading h2,
+.modal-panel h3 {
+    margin: 0;
+    font-family: "Inter", "Avenir Next", sans-serif;
+}
+
+.eyebrow,
+.side-card-label,
+.modal-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 6px;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+}
+
+.brand-copy p,
+.side-card p,
+.modal-panel p {
+    margin: 0;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.brand-copy h1 {
+    font-size: 30px;
+    line-height: 1.05;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.toolbar-btn,
+.side-card-btn,
+.modal-close,
+.modal-backdrop {
+    transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
+}
+
+.toolbar-btn,
+.side-card-btn {
+    min-height: 44px;
+    padding: 0 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-main);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.toolbar-btn:hover,
+.side-card-btn:hover,
+.modal-close:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.toolbar-btn.accent,
+.side-card-btn {
+    border-color: rgba(236, 190, 114, 0.3);
+    background: linear-gradient(135deg, rgba(215, 154, 59, 0.94), rgba(240, 191, 104, 0.92));
+    color: #1f160b;
+    box-shadow: 0 12px 26px var(--accent-shadow);
+}
+
+.stage-shell {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    min-height: 0;
+}
+
+.stage-frame {
+    position: relative;
+    min-height: 0;
+    overflow: hidden;
+    border-radius: 28px;
+    border: 1px solid var(--line-warm);
+    background:
+        linear-gradient(180deg, rgba(7, 9, 13, 0.4), rgba(7, 9, 13, 0.7)),
+        #000;
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+        0 22px 55px rgba(0, 0, 0, 0.36);
+}
+
+#game-frame {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: calc(100vh - 216px);
+    border: 0;
+    background: #000;
+}
+
+.loading-panel {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: grid;
+    place-content: center;
+    gap: 12px;
+    padding: 24px;
+    text-align: center;
+    background:
+        linear-gradient(180deg, rgba(6, 8, 12, 0.78), rgba(6, 8, 12, 0.94)),
+        url("/app-assets/startUpImage.png") center / cover no-repeat;
+    transition: opacity 220ms ease, visibility 220ms ease;
+}
+
+.loading-panel.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.loading-title {
+    font-family: "Inter", "Avenir Next", sans-serif;
+    font-size: clamp(26px, 4vw, 40px);
+}
+
+.loading-subtitle {
+    max-width: 480px;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.modal-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 9;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background: rgba(3, 4, 7, 0.74);
+}
+
+.modal-card {
+    position: relative;
+    z-index: 1;
+    width: min(920px, 100%);
+    max-height: min(760px, calc(100vh - 48px));
+    overflow: auto;
+    padding: 26px;
+    border-radius: 28px;
+    border: 1px solid var(--line-warm);
+    background: linear-gradient(180deg, rgba(16, 19, 27, 0.98), rgba(11, 13, 18, 0.98));
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.45);
+}
+
+.modal-close {
+    position: sticky;
+    top: 0;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-main);
+}
+
+.shell-notice {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 8;
+    display: grid;
+    gap: 10px;
+    width: min(420px, calc(100vw - 32px));
+    padding: 16px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(236, 190, 114, 0.28);
+    background: linear-gradient(180deg, rgba(18, 21, 30, 0.96), rgba(12, 14, 20, 0.98));
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.shell-notice-label {
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+}
+
+.shell-notice-text {
+    line-height: 1.6;
+    color: var(--text-main);
+}
+
+.shell-notice-close {
+    justify-self: end;
+    min-height: 38px;
+    padding: 0 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-main);
+}
+
+.shell-notice-close:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.modal-content {
+    clear: both;
+}
+
+.modal-heading {
+    margin-bottom: 18px;
+}
+
+.modal-heading h2 {
+    font-size: 30px;
+    line-height: 1.1;
+}
+
+.modal-hero {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    margin-bottom: 18px;
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.modal-panel,
+.env-list {
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.modal-panel {
+    padding: 18px;
+}
+
+.modal-panel h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.env-list {
+    overflow: hidden;
+}
+
+.env-row {
+    display: grid;
+    grid-template-columns: 160px minmax(0, 1fr);
+    gap: 14px;
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.env-row:last-child {
+    border-bottom: 0;
+}
+
+.env-row span {
+    color: var(--text-muted);
+}
+
+.env-row code {
+    display: block;
+    overflow-wrap: anywhere;
+    font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
+    color: var(--text-main);
+}
+
+@media (max-width: 1120px) {
+    .app-shell {
+        padding: 16px;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .toolbar {
+        justify-content: flex-start;
+    }
+
+    .stage-shell {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 760px) {
+    .app-shell {
+        padding: 12px;
+    }
+
+    .topbar,
+    .modal-card,
+    .shell-notice {
+        border-radius: 20px;
+    }
+
+    .brand-block {
+        align-items: flex-start;
+    }
+
+    .brand-icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 14px;
+    }
+
+    .brand-copy h1 {
+        font-size: 26px;
+    }
+
+    .toolbar-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #game-frame {
+        min-height: 58vh;
+    }
+
+    .modal-grid,
+    .env-row {
+        grid-template-columns: 1fr;
+    }
+
+    .shell-notice {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        width: auto;
+    }
+}

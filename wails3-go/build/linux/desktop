@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=My Product
+Comment=A construct2game-wails3 application
+# The Exec line includes %u to pass the URL to the application
+Exec=/usr/local/bin/construct2game-wails3 %u
+Terminal=false
+Type=Application
+Icon=construct2game-wails3
+Categories=Utility;
+StartupWMClass=construct2game-wails3
+
+ 
